@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head>
+	<title>SFPD API</title>
+
+</head>
+<body>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcxCTneoolsMGhrbXjxf14jg9ozDrP-QQ&callback=initMap"
+    type="text/javascript"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script type="text/javascript">
+  	function initMap() {
+    	var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 37.7599, lng: -122.4148},
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+  }
+  </script>
+
+<header>
+  <h1>Crime in SF's Mission District</h1>
+</header>
+<br>
+<div id="controls" class="row">
+
+    <p>TYPE OF CRIME:</p><br>
+    <input type="radio" name="offense" value="VANDALISM" id="myRadio">VANDALISM
+    <input type="radio" name="offense" value="ROBBERY" id="myRadio">ROBBERY
+    <input type="radio" name="offense" value="DRUG/NARCOTIC" id="myRadio" checked>DRUG/NARCOTIC
+    <input type="radio" name="offense" value="VEHICLE THEFT" id="myRadio">VEHICLE THEFT
+    <input type="radio" name="offense" value="ASSAULT"   id="myRadio">ASSAULT<br>
+
+    <button class="btn btn-primary" onclick="getData()">Find Crime</button>
+  </div>
+
+    
+
+<div style="top: 2%; width: 70%; margin: auto; height: 500px" id="map"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
